@@ -71,8 +71,8 @@ namespace pharmacie
             string laDateD = dataGridView1.CurrentRow.Cells[2].Value.ToString();
             string laDateF = dataGridView1.CurrentRow.Cells[3].Value.ToString();
             string laRemarque = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-           
-            Form3 Form3 = new Form3(Convert.ToInt16(leNumero), Convert.ToInt32(laDate), laDateD, laDateF, laRemarque);
+          
+            Form3 Form3 = new Form3(Convert.ToInt16(leNumero), laDate, laDateD, laDateF, laRemarque);
             Form3.Show();
             this.Hide();
         }

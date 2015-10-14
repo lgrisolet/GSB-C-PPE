@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using MySql.Data.MySqlClient;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,12 +16,13 @@ namespace pharmacie
 
 
         private int leNumeroDemande;
-        private int laDate;
+        private string laDate;
         private string ladateD;
         private string ladateF;
         private string laRemarque;
+        private int leProduit=3;
 
-        public Form3(int leCode, int laDate, string laDateDb, string laDateFn, string laRm)
+        public Form3(int leCode, string laDate, string laDateDb, string laDateFn, string laRm)
         {
             this.leNumeroDemande = leCode;
             this.laDate = laDate;
@@ -56,7 +58,9 @@ namespace pharmacie
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            DAODemande d = new DAODemande();
+            MySqlCommand req = new MySqlCommand("UPDATE demande SET debut = '" + textBox3.Text + "', fin =' " + textBox4.Text + "', remarque = '" + richTextBox1.Text + "', idProduit = " + leProduit + " WHERE idDemande = " + textBox1.Text+",");
+            req.ExecuteNonQuery();
             
             Form2 Form2 = new Form2();
             Form2.Show();
@@ -65,6 +69,34 @@ namespace pharmacie
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string a = comboBox3.SelectedItem.ToString();
+
+            switch(a)
+            {
+                case "XLS":
+                    {
+                        leProduit = 1;
+                        
+                    }break;
+                case "Strepsil":
+                    {
+                        leProduit = 2;
+
+                    }
+                    break;
+                case "Smecta":
+                    {
+                        leProduit = 3;
+
+                    }
+                    break;                  
+
+            }
 
         }
     }
