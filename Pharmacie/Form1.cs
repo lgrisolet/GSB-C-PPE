@@ -43,7 +43,7 @@ namespace pharmacie
             DAOUser daoU = new DAOUser();
             if (daoU.autoriserConnexionUser(textBox1.Text, textBox2.Text))
             {
-                Console.WriteLine("Bienvenue , pharmacie");
+                
                 this.Hide();
                
                 Form2 Form2 = new Form2();

@@ -12,6 +12,8 @@ namespace pharmacie
 {
     public partial class Form3 : Form
     {
+        public static object TextBox1 { get; private set; }
+
         public Form3()
         {
             InitializeComponent();
@@ -25,7 +27,7 @@ namespace pharmacie
         private void button1_Click(object sender, EventArgs e)
         {
 
-            req = "INSERT INTO ";
+            
             Form2 Form2 = new Form2();
             Form2.Show();
             this.Hide(); ;

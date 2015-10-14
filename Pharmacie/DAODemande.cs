@@ -41,5 +41,10 @@ namespace pharmacie
             //ChargerDataset(req);
 
         }
+        public void AjouterProduit()
+        {
+            
+        }
+               
     }
 }
