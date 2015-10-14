@@ -12,32 +12,7 @@ namespace pharmacie
 {
     class DAODemande : DAOConn
     {
-        private int leNumeroDemande;
-        private int laDate;
-        private string ladateD;
-        private string ladateF;
-        private string laRemarque;
-
-        public Form3(int leCode, int laDate, string laDateDb, string laDateFn, string laRm)
-        {
-            this.leNumeroDemande = leCode;
-            this.laDate = laDate;
-            this.ladateD = laDateDb;
-            this.ladateF = laDateFn;
-            this.laRemarque = laRm;
-
-            InitializeComponent();
-            ModifierProduit();
-        }
-
-        public void ModifierProduit()
-        {
-            this.textBox1.Text = this.leNumeroDemande;
-            this.textBox2.Text = this.laDate;
-            this.textBox3.Text = this.ladateD;
-            this.textBox4.Text = this.ladateF;
-            this.richTextBox1.Text = this.laRemarque;
-        }
+        
 
         public DAODemande() : base()
         {

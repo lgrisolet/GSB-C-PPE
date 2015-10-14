@@ -66,7 +66,13 @@ namespace pharmacie
 
         private void Ajouter(object sender, EventArgs e)
         {
-            Form3 Form3 = new Form3();
+            string leNumero = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            string laDate = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            string laDateD = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            string laDateF = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+            string laRemarque = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+           
+            Form3 Form3 = new Form3(Convert.ToInt16(leNumero), Convert.ToInt32(laDate), laDateD, laDateF, laRemarque);
             Form3.Show();
             this.Hide();
         }
