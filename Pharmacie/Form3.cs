@@ -34,8 +34,8 @@ namespace pharmacie
 
         public void ModifierProduit()
         {
-            this.textBox1.Text = this.leNumeroDemande;
-            this.textBox2.Text = this.laDate;
+            this.textBox1.Text = this.leNumeroDemande.ToString();
+            this.textBox2.Text = this.laDate.ToString();
             this.textBox3.Text = this.ladateD;
             this.textBox4.Text = this.ladateF;
             this.richTextBox1.Text = this.laRemarque;
